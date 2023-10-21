@@ -71,6 +71,8 @@ def add_watermark(
     combined.paste(original, (0,0), original)
 # Paste the watermark onto the combined image
     combined.paste(watermark, position, watermark)
+# Convert to RGB
+    combined = combined.convert("RGB")
 # Save the resulting image
     original_name, original_extension = os.path.splitext(os.path.basename(original_image_path))
     timestamp = time.strftime("%Y%m%d%H%M%S")
